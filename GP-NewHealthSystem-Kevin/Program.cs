@@ -33,10 +33,10 @@ namespace GP_NewHealthSystem_Kevin
 
     class health
     {
-        public health(int HP)
+        public health(int maxHealth)
         {
-            _maxHealth = HP;
-            _currentHealth = HP;
+            _maxHealth = maxHealth;
+            _currentHealth = maxHealth;
 
 
         }
@@ -59,7 +59,14 @@ namespace GP_NewHealthSystem_Kevin
                 _currentHealth = _maxHealth;
             }
         }
-
+        public void TakeDamage(int DMG)
+        {
+            _currentHealth -= DMG;
+            if (_currentHealth < 0)
+            {
+                _currentHealth = 0;
+            }
+        }
         public int currentHP
         {
             get { return _currentHealth; }
