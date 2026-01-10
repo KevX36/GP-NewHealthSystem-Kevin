@@ -1,0 +1,7 @@
+C:\nscc_work\GP-NewHealthSystem-Kevin\GP-NewHealthSystem-Kevin\bin\Debug\GP-NewHealthSystem-Kevin.exe.config
+C:\nscc_work\GP-NewHealthSystem-Kevin\GP-NewHealthSystem-Kevin\bin\Debug\GP-NewHealthSystem-Kevin.exe
+C:\nscc_work\GP-NewHealthSystem-Kevin\GP-NewHealthSystem-Kevin\bin\Debug\GP-NewHealthSystem-Kevin.pdb
+C:\nscc_work\GP-NewHealthSystem-Kevin\GP-NewHealthSystem-Kevin\obj\Debug\GP-NewHealthSystem-Kevin.csproj.AssemblyReference.cache
+C:\nscc_work\GP-NewHealthSystem-Kevin\GP-NewHealthSystem-Kevin\obj\Debug\GP-NewHealthSystem-Kevin.csproj.CoreCompileInputs.cache
+C:\nscc_work\GP-NewHealthSystem-Kevin\GP-NewHealthSystem-Kevin\obj\Debug\GP-NewHealthSystem-Kevin.exe
+C:\nscc_work\GP-NewHealthSystem-Kevin\GP-NewHealthSystem-Kevin\obj\Debug\GP-NewHealthSystem-Kevin.pdb

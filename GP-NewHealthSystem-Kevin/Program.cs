@@ -8,14 +8,65 @@ namespace GP_NewHealthSystem_Kevin
 {
     internal class Program
     {
+        static bool valadInput = false;
+        static Random random = new Random();
+        //if ture heal, if not do Damage
+        static bool HealOrDMG = true;
         static void Main(string[] args)
         {
+            int Roll = random.Next(1, 20);
+            Console.WriteLine("Please enter a name, then hit enter");
+            string name = Console.ReadLine();
+            player p1 = new player(name,100,100);
+            
+            while (p1.Health > 0)
+            {
+                Console.WriteLine($"{p1}    Health: {p1.Health}     Shield: {p1.Shield}     Status: {p1.GetStatusString()}");
+                while (valadInput == false)
+                {
+                    Console.WriteLine("enter D to take damage, enter H to heal");
+                    string inupt = Console.ReadLine();
+                    if (inupt == "H")
+                    {
+                        HealOrDMG = true;
+                        valadInput = true;
+                    }
+                    else if (inupt == "h")
+                    {
+                        HealOrDMG = true;
+                        valadInput = true;
+                    }
+                    else if (inupt == "D")
+                    {
+                        HealOrDMG = false;
+                        valadInput = true;
+                    }
+                    else if (inupt == "d")
+                    {
+                        HealOrDMG = false;
+                        valadInput = true;
+                    }
+                    else
+                    {
+                        Console.WriteLine("that is not a valad input, try again");
+                    }
 
+                }
+                valadInput = false;
+                if(HealOrDMG == true)
+                {
+                    p1.heal(Roll);
+                }
+                else
+                {
+                    p1.TakeDamage(Roll);
+                }
 
+                Console.Clear();
 
-
-
-
+            }
+            Console.WriteLine("You died, press enter key to end");
+            Console.ReadLine();
 
 
 
@@ -109,6 +160,10 @@ namespace GP_NewHealthSystem_Kevin
         {
             get { return _Shield.currentHP; }
         }
+        public void heal(int recover)
+        {
+            _Health.Heal(recover);
+        }
         public void TakeDamage(int DMG)
         {
             if (DMG < 0)
@@ -132,15 +187,6 @@ namespace GP_NewHealthSystem_Kevin
             {
                 _Health.TakeDamage(DMG);
             }
-
-
-
-
-
-
-
-
-
 
 
         }
