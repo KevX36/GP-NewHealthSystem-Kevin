@@ -86,12 +86,87 @@ namespace GP_NewHealthSystem_Kevin
 
     class player
     {
+        public player(string name, int maxHealth, int maxShield)
+        {
+            _name = name;
+            _Health = new health(maxHealth);
+            _Shield = new health(maxShield);
+
+
+        }
+        string _name;
+        health _Health;
+        health _Shield;
+        public string Name
+        {
+            get { return _name; }
+        }
+        public int Health
+        {
+            get { return _Health.currentHP; }
+        }
+        public int Shield
+        {
+            get { return _Shield.currentHP; }
+        }
+        public void TakeDamage(int DMG)
+        {
+            if (DMG < 0)
+            {
+                Console.WriteLine("error, value too low");
+            }
+            else if(_Shield.currentHP > 0)
+            {
+                if(DMG < _Shield.currentHP)
+                {
+                    _Shield.TakeDamage(DMG);
+                }
+                else
+                {
+                    DMG -= _Shield.currentHP;
+                    _Shield.TakeDamage(1000000000);
+                    _Health.TakeDamage(DMG);
+                }
+            }
+            else
+            {
+                _Health.TakeDamage(DMG);
+            }
 
 
 
 
 
 
+
+
+
+
+
+        }
+        public string GetStatusString()
+        {
+            string Status = "error";
+            if( _Health.currentHP > (_Health.maxHP / 2))
+            {
+                Status = "Safe";
+            }
+            else if (_Health.currentHP > (_Health.maxHP / 4))
+            {
+                Status = "Danger";
+            }
+            else if (_Health.currentHP > 0)
+            {
+                Status = "Peral";
+            }
+            else if (_Health.currentHP <= 0)
+            {
+                Status = "Dead";
+            }
+            //you catch the referance?
+
+            return Status;
+        }
 
 
 
